@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@media only screen and (max-width:600px) {
+    *{
+        margin: 0;
+        padding: 0;
+        overflow: hidde;
+    }
+
+    img{
+        height: 135vh;
+        width: 65vh;
+        position: fixed;
+        right: 0vh;
+        bottom: -10vh;
+        z-index: -100;
+    }
+
+    .menu-toggle{
+        display: flex;
+        flex-direction: column;
+        height: 20px;
+        justify-content: space-between; 
+        position: relative;
+    }
+
+    .menu-toggle input{
+        position: absolute;
+        width: 40px;
+        height: 28px;
+        left: -5px;
+        top: -3px;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .menu-toggle span{
+        display: block;
+        width: 28px;
+        height: 3px;
+        position: relative;
+        left: 10px;
+        top: 10px;
+        background-color: white;
+        border-radius: 3px;
+        transition: all 0.5s;
+    }
+
+    /* Hamburger Menu animation */
+    .menu-toggle span:nth-child(2){
+        transform-origin: 0 0;
+    }
+
+    .menu-toggle span:nth-child(4){
+        transform-origin: 0 100%;
+    }
+
+    .menu-toggle input:checked ~ span:nth-child(2){
+        background-color: white;
+        transform: rotate(45deg) translate(-1px, -1px);
+    }
+
+    .menu-toggle input:checked ~ span:nth-child(4){
+        transform: rotate(-45deg) translate(-1px, 0);
+    }
+
+    .menu-toggle input:checked ~ span:nth-child(3){
+        opacity: 0;
+        transform: scale(0);
+    }
+    /* Hamburger Menu Animation */
+
+    .web-name a{
+        text-decoration: none;
+        font-family: Poppins, sans-serif;
+        font-size: 25px;
+        color: white;
+        position: fixed;
+        left: 32vh;
+        top: 0.9vh;
+    }
+
+    .Text-Wrapper{
+        font-family: Poppins, sans-serif;
+        font-size: 3vh;
+        position: relative;
+        left: 3.5vh;
+        top: 20px;
+
+        color: white;
+    }
+
+    .txt-login{
+        font-family: Poppins, sans-serif;
+        font-size: 1.3vh;
+        position: relative;
+        top: 35vh;
+        left: 4vh;
+
+        color: white;
+    }
+
+    #submit-btn {
+        box-shadow: rgb(255, 255, 255) 0px 1px 8px;
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5vh;
+        height: 42.3px;
+        width: 155px;
+        background: white;
+        border-radius: 21px;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        position: relative;
+        top: 35.5vh;
+        left: 3.6vh;
+        transition: all 0.25s ease 0s;
+    }
+
+    #submit-btn:hover{
+        box-shadow: 0px 1px 18px #fff
+    }
+
+    #submit-btn2{
+        box-shadow: rgb(255, 255, 255) 0px 1px 8px;
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5vh;
+        height: 42.3px;
+        width: 155px;
+        background: white;
+        border-radius: 21px;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        position: relative;
+        top: 37vh;
+        left: 3.6vh;
+        transition: all 0.25s ease 0s;
+    }
+
+    #submit-btn2:hover{
+        box-shadow: 0px 1px 18px #fff
+    }
+}
