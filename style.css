@@ -1,10 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@media only screen and (max-width:600px) {
+/* Ukuran Komputer */
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 15%;
+    justify-content: space-between;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a :hover{
+    color: black;
+}
+
+/* Hamburger Menu */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    bottom: 45.3vh;
+    left: 7.5px;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    display: block;
+    position: relative;
+    bottom: 46.3vh;
+    left: 2vh;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    transition: all 0.7s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: rgb(255, 255, 255);
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: rgb(255, 255, 255);
+    transform: rotate(-45deg)translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Ukuran Mobile */
+@media only screen and (max-width:576px) {
     *{
         margin: 0;
         padding: 0;
-        overflow: hidde;
     }
+
+    body{
+        overflow-y: hidden;
+    }
+
+/* background */
 
     img{
         height: 135vh;
@@ -15,98 +100,82 @@
         z-index: -100;
     }
 
+    /* Menu Toggle */
     .menu-toggle{
         display: flex;
-        flex-direction: column;
-        height: 20px;
-        justify-content: space-between; 
-        position: relative;
     }
 
-    .menu-toggle input{
+    nav ul {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3vh;
+        border-radius: 15px;
         position: absolute;
-        width: 40px;
-        height: 28px;
-        left: -5px;
-        top: -3px;
+        left: 15vh;
+        top: 50px;
+        height: 100vh;
+        width: 80%;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        z-index: 1;
+
+        transform: translateX(100%);
+        transition: all 1.5s;
         opacity: 0;
-        cursor: pointer;
     }
 
-    .menu-toggle span{
-        display: block;
-        width: 28px;
-        height: 3px;
-        position: relative;
-        left: 10px;
-        top: 10px;
-        background-color: white;
-        border-radius: 3px;
-        transition: all 0.5s;
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
     }
 
-    /* Hamburger Menu animation */
-    .menu-toggle span:nth-child(2){
-        transform-origin: 0 0;
-    }
-
-    .menu-toggle span:nth-child(4){
-        transform-origin: 0 100%;
-    }
-
-    .menu-toggle input:checked ~ span:nth-child(2){
-        background-color: white;
-        transform: rotate(45deg) translate(-1px, -1px);
-    }
-
-    .menu-toggle input:checked ~ span:nth-child(4){
-        transform: rotate(-45deg) translate(-1px, 0);
-    }
-
-    .menu-toggle input:checked ~ span:nth-child(3){
-        opacity: 0;
-        transform: scale(0);
-    }
     /* Hamburger Menu Animation */
 
     .web-name a{
         text-decoration: none;
-        font-family: Poppins, sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 25px;
         color: white;
         position: fixed;
-        left: 32vh;
+        left: 3vh;
         top: 0.9vh;
     }
 
+    /* text "Create Your Own" */
+
     .Text-Wrapper{
-        font-family: Poppins, sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 3vh;
         position: relative;
         left: 3.5vh;
-        top: 20px;
+        bottom: 88vh;
 
         color: white;
     }
 
+    /* Text "Join UpSideDown" */
+
     .txt-login{
-        font-family: Poppins, sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 1.3vh;
         position: relative;
-        top: 35vh;
+        bottom: 60vh;
         left: 4vh;
 
         color: white;
     }
 
+    /* Sign In */
+
     #submit-btn {
         box-shadow: rgb(255, 255, 255) 0px 1px 8px;
         cursor: pointer;
         color: rgb(0, 0, 0);
-        font-family: "Poppins", sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 2.5vh;
-        height: 42.3px;
-        width: 155px;
+        height: 43px;
+        width: 160px;
         background: white;
         border-radius: 21px;
         border-width: initial;
@@ -114,14 +183,16 @@
         border-color: initial;
         border-image: initial;
         position: relative;
-        top: 35.5vh;
+        bottom: 59vh;
         left: 3.6vh;
         transition: all 0.25s ease 0s;
     }
 
     #submit-btn:hover{
-        box-shadow: 0px 1px 18px #fff
+        box-shadow: 0px 1px 18px rgb(78, 228, 255)
     }
+
+    /* Sign Up */
 
     #submit-btn2{
         box-shadow: rgb(255, 255, 255) 0px 1px 8px;
@@ -129,8 +200,8 @@
         color: rgb(0, 0, 0);
         font-family: "Poppins", sans-serif;
         font-size: 2.5vh;
-        height: 42.3px;
-        width: 155px;
+        height: 43px;
+        width: 160px;
         background: white;
         border-radius: 21px;
         border-width: initial;
@@ -138,12 +209,40 @@
         border-color: initial;
         border-image: initial;
         position: relative;
-        top: 37vh;
+        bottom: 58vh;
         left: 3.6vh;
         transition: all 0.25s ease 0s;
     }
 
     #submit-btn2:hover{
-        box-shadow: 0px 1px 18px #fff
+        box-shadow:  0px 1px 18px rgb(78, 228, 255);
+    }
+
+    /* Isi Menu Toggle */
+    nav{
+        padding: 0;
+        margin: 0 20px;
+        transition: 0.3s ease;
+        display: ;
+    }
+
+    nav ul{
+        position: relative;
+        background-color: white;
+    }
+
+    nav ul li{
+        list-style: none;
+        padding: 10px 0;
+    }
+
+    nav ul li a{ 
+        font-family: 'Poppins', sans-serif;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+
+    nav li a :hover{
+        font-weight: bold;
     }
 }
