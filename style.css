@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* Ukuran Komputer */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 nav{
     display: flex;
     justify-content: space-around;
@@ -80,11 +86,6 @@ nav ul li a :hover{
 
 /* Ukuran Mobile */
 @media only screen and (max-width:576px) {
-    *{
-        margin: 0;
-        padding: 0;
-    }
-
     body{
         overflow-y: hidden;
         overflow-x: hidden;
